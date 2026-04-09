@@ -36,7 +36,7 @@ jobs:
         docker push ${{ secrets.ECR_REPOSITORY_URI }}:latest
 
 
-         - name: Fill in the new image ID in the Amazon ECS task definition     
+      - name: Fill in the new image ID in the Amazon ECS task definition     
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
