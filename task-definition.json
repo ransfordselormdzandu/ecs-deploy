@@ -1,0 +1,33 @@
+{
+  "name": "ecs-container",
+  "image": "387886938436.dkr.ecr.eu-north-1.amazonaws.com/ransfordselormdzandu/ecs-deploy:latest",
+  "cpu": 1024,
+  "memory": 3072,
+  "memoryReservation": 1024,
+  "portMappings": [
+    {
+      "containerPort": 80,
+      "hostPort": 80,
+      "protocol": "tcp",
+      "name": "ecs-container-80-tcp",
+      "appProtocol": "http"
+    }
+  ],
+  "essential": true,
+  "environment": [],
+  "environmentFiles": [],
+  "mountPoints": [],
+  "volumesFrom": [],
+  "ulimits": [],
+  "logConfiguration": {
+    "logDriver": "awslogs",
+    "options": {
+      "awslogs-group": "/ecs/ecs-deploy",
+      "awslogs-create-group": "true",
+      "awslogs-region": "eu-north-1",
+      "awslogs-stream-prefix": "ecs"
+    },
+    "secretOptions": []
+  },
+  "systemControls": []
+}
